@@ -27,6 +27,14 @@
         };
     };
 
+    behaviors {
+        enc_ug: enc_ug {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&rgb_ug>, <&rgb_ug>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -106,12 +114,16 @@
 
             display-name = "adjust";
             bindings = <
-&bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                                        &none  &none  &none  &none        &none  &soft_off
-&ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_EFF                                     &none  &none  &none  &none        &none  &none
-&none              &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &none            &none            &none                                               &none  &none  &none  &none        &none  &none
-&sys_reset         &none            &none            &none            &none            &none            &rgb_ug RGB_TOG    &studio_unlock  &none  &none  &none  &none        &none  &sys_reset
-                                    &bootloader      &none            &none            &none            &none              &none           &none  &none  &none  &bootloader
+&bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                                        &none            &none  &none  &none        &none  &soft_off
+&ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_EFF                                     &none            &none  &none  &none        &none  &none
+&none              &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &none            &none            &none                                               &rgb_ug RGB_SAI  &none  &none  &none        &none  &none
+&sys_reset         &none            &none            &none            &none            &none            &rgb_ug RGB_TOG    &studio_unlock  &rgb_ug RGB_SAD  &none  &none  &none        &none  &sys_reset
+                                    &bootloader      &none            &none            &none            &none              &none           &none            &none  &none  &bootloader
             >;
+
+            sensor-bindings =
+                <&enc_ug RGB_BRI RGB_BRD>,
+                <&enc_ug RGB_HUI RGB_HUD>;
         };
     };
 };
