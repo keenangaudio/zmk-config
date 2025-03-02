@@ -40,6 +40,10 @@
         };
     };
 
+    sensors {
+        triggers-per-rotation = <32>;
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
