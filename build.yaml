@@ -25,3 +25,10 @@ include:
     # cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: nice_nano_v2
     shield: sofle_right
+  # Mikoto variant, dont mix up the firmware, the pins are not the same
+  - board: mikoto
+    shield: sofle_left
+    # snippet: studio-rpc-usb-uart
+    # cmake-args: -DCONFIG_ZMK_STUDIO=y
+  - board: mikoto
+    shield: sofle_right
