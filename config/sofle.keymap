@@ -27,10 +27,6 @@
         };
     };
 
-    &sensors {
-        triggers-per-rotation = <32>;
-    };
-
     behaviors {
         r_rgb_b: r_rgb_b {
             compatible = "zmk,behavior-sensor-rotate";
