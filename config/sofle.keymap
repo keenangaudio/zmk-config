@@ -11,9 +11,10 @@
 #include <dt-bindings/zmk/rgb.h>
 
 #define BASE 0
-#define LOWER 1
-#define RAISE 2
-#define ADJUST 3
+#define GAME 1
+#define LOWER 2
+#define RAISE 3
+#define ADJUST 4
 
 / {
     // Activate ADJUST layer by pressing raise and lower
