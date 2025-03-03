@@ -87,6 +87,11 @@
         };
 
         game {
+            display-name = "game";
+
+            // move windows key over, so we can use the ctrl based shortcuts, and so its out of the way when playing games
+            // also, swap the layer key with space, so its easier to reach when fingers are on wasd
+
             bindings = <
 &trans  &trans  &trans        &trans  &trans            &trans                       &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans        &trans  &trans            &trans                       &trans  &trans  &trans  &trans  &trans  &trans
